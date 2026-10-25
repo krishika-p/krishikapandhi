@@ -101,16 +101,18 @@ p { margin: 0; }
   margin: 0; display: grid; justify-items: center; text-align: center; gap: 22px;
   border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); padding-inline: clamp(12px, 2vw, 28px);
 }
-.seal { position: relative; width: min(220px, 70%); aspect-ratio: 1; display: grid; place-items: center; }
-.seal svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 40s linear infinite; overflow: visible; }
-.seal-edge { fill: none; stroke: var(--olive); stroke-width: 1; }
-.seal-text { font-family: var(--mono); font-size: 12px; letter-spacing: 1px; fill: var(--olive); }
-.seal-mono { position: relative; font-family: var(--display); font-weight: 900; font-style: italic; font-size: clamp(3.2rem, 6vw, 4.4rem); color: var(--clay); line-height: 1; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.cover-quote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.04; margin: 0; }
+.quote-mark { font-family: var(--display); font-weight: 900; font-size: clamp(7rem, 12vw, 10rem); line-height: 0.6; color: var(--clay); height: 0.45em; margin-top: 8px; }
+.cover-quote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(2.2rem, 4vw, 3.3rem); line-height: 1.02; margin: 0; }
 .cover-quote span { display: block; }
 .cover-quote span:last-child { color: var(--olive); }
-.cover-feature .byline { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.cover-feature .byline { font-family: var(--display); font-style: italic; font-size: 1.35rem; color: var(--clay); }
+.status {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none; margin-top: 6px;
+  border: 1px solid var(--ink); padding: 8px 14px; max-width: 100%;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: left;
+}
+.status .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--clay); animation: pulse 1.6s ease-in-out infinite; }
+.status:hover { background: var(--ink); color: var(--paper); }
 
 .cover-bottom { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--ink); padding-top: 14px; }
 .traits { display: flex; gap: 10px 22px; flex-wrap: wrap; font-family: var(--display); font-style: italic; font-size: 1.3rem; }
@@ -336,19 +338,12 @@ p { margin: 0; }
     </div>
 
     <figure class="cover-feature">
-      <div class="seal" aria-hidden="true">
-        <svg viewBox="0 0 200 200">
-          <defs><path id="seal-ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-          <circle cx="100" cy="100" r="96" class="seal-edge"/>
-          <circle cx="100" cy="100" r="60" class="seal-edge"/>
-          <text class="seal-text"><textPath href="#seal-ring" textLength="486">KRISHIKA PANDHI · TECH SALES · RAJKOT · VOL. 01 · </textPath></text>
-        </svg>
-        <span class="seal-mono">KP</span>
-      </div>
+      <span class="quote-mark" aria-hidden="true">“</span>
       <blockquote class="cover-quote">
-        <span>“Trust first.</span><span>Everything else follows.”</span>
+        <span>Trust first.</span><span>Everything else follows.</span>
       </blockquote>
-      <figcaption class="byline">In my words</figcaption>
+      <figcaption class="byline">— Krishika</figcaption>
+      <a class="status" href="#day"><span class="dot" aria-hidden="true"></span><span id="cover-status">Right now in Rajkot: probably on a call</span></a>
     </figure>
 
     <div class="coverlines right">
@@ -678,11 +673,15 @@ document.querySelectorAll('.flip').forEach(function (card) {
     var current = null;
     items.forEach(function (li) { li.classList.remove('is-now'); if (t >= parseFloat(li.dataset.start)) current = li; });
     if (current && current.dataset.start === '27') current = null;
+    var cover = document.getElementById('cover-status');
     if (current) {
       current.classList.add('is-now');
-      text.textContent = 'Right now, I’m probably: ' + current.querySelector('.w').firstChild.textContent.trim() + '.';
+      var doing = current.querySelector('.w').firstChild.textContent.trim();
+      text.textContent = 'Right now, I’m probably: ' + doing + '.';
+      cover.textContent = 'Right now in Rajkot: ' + doing;
     } else {
       text.textContent = 'Right now, I’m asleep. Finally.';
+      cover.textContent = 'Right now in Rajkot: asleep. Finally.';
     }
   }
   tick();
