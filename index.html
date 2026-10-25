@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Krishika Pandhi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Krishika Pandhi: tech sales, black coffee, BMW, and 3 a.m. finishes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a magazine you scroll and play with. Cover, contents, profile, flip-card craft, recognition, a live day-in-my-life, quick-fire game, shelf & boarding passes, off duty, contact. */
+:root {
+  --paper: #F1EADB;
+  --paper-deep: #E6DAC3;
+  --ink: #2B211A;
+  --ink-soft: #6A5A4C;
+  --clay: #B1502A;
+  --olive: #66683A;
+  --rule: #CDBB9C;
+  --on-dark: #F1EADB;
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --wrap: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1D1713; --paper-deep: #2A211B; --ink: #EFE5D3; --ink-soft: #B3A28E;
+    --clay: #DE7B4E; --olive: #A9AB6E; --rule: #4A3C31; --on-dark: #1D1713; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1D1713; --paper-deep: #2A211B; --ink: #EFE5D3; --ink-soft: #B3A28E;
+  --clay: #DE7B4E; --olive: #A9AB6E; --rule: #4A3C31; --on-dark: #1D1713; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.02; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.label {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.wrap {
+  max-width: var(--wrap); margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { padding-block: clamp(56px, 9vw, 120px); border-top: 1px solid var(--rule); }
+.folio { display: flex; justify-content: space-between; gap: 16px; margin-bottom: clamp(32px, 5vw, 56px); }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(32px, 5vw, 56px); }
+.sec-head h2 { font-size: clamp(2.6rem, 7vw, 5.2rem); }
+.sec-head h2 em { color: var(--clay); }
+.sec-head p { max-width: 38ch; color: var(--ink-soft); }
+
+/* ---------- COVER ---------- */
+.cover { padding-block: 20px clamp(40px, 6vw, 72px); }
+.cover-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+.masthead {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2.6rem, 14.5vw, 12rem); letter-spacing: -0.035em; line-height: 0.82;
+  margin: 18px 0 0; color: var(--clay); text-align: center;
+  animation: rise 900ms cubic-bezier(.2,.7,.2,1) both;
+}
+.masthead-sub { text-align: center; font-family: var(--display); font-style: italic; font-size: clamp(1.1rem, 2.6vw, 1.6rem); margin-top: 10px; }
+@keyframes rise { from { transform: translateY(14px); opacity: 0.4; } to { transform: none; opacity: 1; } }
+
+.cover-grid {
+  display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(28px, 4vw, 48px); align-items: start;
+}
+.coverlines { display: grid; gap: 28px; }
+.coverline { text-decoration: none; display: block; }
+.coverline .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); display: block; margin-bottom: 6px; }
+.coverline strong { font-family: var(--display); font-weight: 600; font-size: 1.45rem; line-height: 1.12; display: block; }
+.coverline small { display: block; font-size: 1rem; color: var(--ink-soft); margin-top: 6px; line-height: 1.4; }
+.coverline:hover strong { color: var(--clay); }
+.coverlines.right { text-align: right; }
+
+.cover-feature {
+  margin: 0; display: grid; justify-items: center; text-align: center; gap: 22px;
+  border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); padding-inline: clamp(12px, 2vw, 28px);
+}
+.seal { position: relative; width: min(220px, 70%); aspect-ratio: 1; display: grid; place-items: center; }
+.seal svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 40s linear infinite; overflow: visible; }
+.seal-edge { fill: none; stroke: var(--olive); stroke-width: 1; }
+.seal-text { font-family: var(--mono); font-size: 12px; letter-spacing: 1px; fill: var(--olive); }
+.seal-mono { position: relative; font-family: var(--display); font-weight: 900; font-style: italic; font-size: clamp(3.2rem, 6vw, 4.4rem); color: var(--clay); line-height: 1; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cover-quote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.04; margin: 0; }
+.cover-quote span { display: block; }
+.cover-quote span:last-child { color: var(--olive); }
+.cover-feature .byline { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cover-bottom { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--ink); padding-top: 14px; }
+.traits { display: flex; gap: 10px 22px; flex-wrap: wrap; font-family: var(--display); font-style: italic; font-size: 1.3rem; }
+.traits span + span::before { content: "·"; margin-right: 22px; color: var(--clay); font-style: normal; }
+.barcode { display: flex; align-items: end; gap: 10px; }
+.barcode canvas { width: 132px; height: 44px; display: block; }
+.barcode .label { line-height: 1.4; text-align: right; }
+
+/* ---------- CONTENTS ---------- */
+.contents { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(28px, 6vw, 80px); align-items: start; }
+.contents h2 { font-size: clamp(3rem, 8vw, 6rem); font-style: italic; }
+.toc { list-style: none; margin: 0; padding: 0; }
+.toc li { border-bottom: 1px solid var(--rule); }
+.toc a { display: grid; grid-template-columns: 3.2rem 1fr; gap: 16px; padding: 14px 0; text-decoration: none; align-items: baseline; }
+.toc .pg { font-family: var(--mono); font-size: 0.85rem; color: var(--clay); font-variant-numeric: tabular-nums; }
+.toc .t { font-family: var(--display); font-size: 1.4rem; line-height: 1.15; }
+.toc .d { display: block; font-family: var(--body); font-size: 1rem; color: var(--ink-soft); margin-top: 2px; }
+.toc a:hover .t { color: var(--clay); }
+
+/* ---------- PROFILE ---------- */
+.about-head { display: grid; gap: 14px; max-width: 900px; }
+.about-head h2 { font-size: clamp(2.6rem, 7vw, 5.2rem); }
+.about-head h2 em { color: var(--clay); }
+.dek { font-family: var(--display); font-style: italic; font-size: clamp(1.25rem, 2.4vw, 1.6rem); color: var(--ink-soft); max-width: 44ch; line-height: 1.3; }
+.columns { columns: 2 300px; column-gap: 48px; margin-top: clamp(32px, 5vw, 52px); max-width: 980px; }
+.columns p { margin-bottom: 1em; }
+.dropcap::first-letter {
+  font-family: var(--display); font-weight: 700; float: left; font-size: 4.6em; line-height: 0.82;
+  padding: 0.06em 0.1em 0 0; color: var(--clay);
+}
+.route { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.06em; }
+.route .line { flex: 1 1 40px; min-width: 30px; max-width: 160px; height: 0; border-top: 1px dashed var(--clay); }
+.route b { font-weight: 500; color: var(--clay); }
+
+/* ---------- CRAFT: flip cards ---------- */
+.flips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.flip { background: none; border: 0; padding: 0; cursor: pointer; text-align: left; perspective: 1200px; min-height: 340px; display: grid; }
+.flip-inner { display: grid; transition: transform 700ms cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+.face {
+  grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  padding: clamp(22px, 2.6vw, 30px); display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+  border: 1px solid var(--ink);
+}
+.face.side-a { background: var(--paper); }
+.face.side-b { background: var(--ink); color: var(--paper); transform: rotateY(180deg); }
+.face .label { color: inherit; opacity: 0.7; }
+.face h3 { font-size: clamp(2.4rem, 4vw, 3.4rem); }
+.face .hook { font-family: var(--display); font-style: italic; font-size: 1.5rem; line-height: 1.15; color: var(--clay); }
+.face.side-b p { font-size: 1.05rem; }
+.face.side-b .pull { font-family: var(--display); font-style: italic; font-size: 1.35rem; color: var(--clay); }
+.flip-hint { display: flex; justify-content: space-between; align-items: center; }
+.flip-hint .turn { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.flip:hover .face.side-a { background: var(--paper-deep); }
+.services { margin-top: clamp(40px, 6vw, 64px); display: flex; gap: 12px 28px; flex-wrap: wrap; align-items: baseline; }
+.services .label { margin-right: 6px; }
+.services span.s { font-family: var(--display); font-size: 1.4rem; }
+.services span.s + span.s::before { content: "/"; margin-right: 28px; color: var(--clay); }
+
+/* ---------- RECOGNITION ---------- */
+.win { background: var(--clay); color: var(--paper); border-top: 0; }
+.win .label { color: var(--paper); opacity: 0.8; }
+.win-grid { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(24px, 6vw, 80px); align-items: center; }
+.rank { font-family: var(--display); font-weight: 900; font-size: clamp(9rem, 28vw, 20rem); line-height: 0.78; letter-spacing: -0.05em; }
+.rank sup { font-size: 0.3em; vertical-align: top; position: relative; top: 0.2em; font-weight: 500; font-style: italic; letter-spacing: 0; }
+.win h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.win p.body { margin-top: 18px; max-width: 52ch; font-size: 1.15rem; }
+.win .facts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+.win .facts span { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid currentColor; padding: 6px 10px; }
+
+/* ---------- DAY IN MY LIFE ---------- */
+.now {
+  display: flex; gap: 14px 24px; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  border: 1px solid var(--ink); padding: 18px 22px; margin-bottom: clamp(28px, 4vw, 44px); background: var(--paper-deep);
+}
+.now .clock { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+.now .clock::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--clay); margin-right: 10px; animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.25; } }
+.now strong { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; }
+.day { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 5vw, 64px); }
+.day li { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: baseline; transition: background 300ms ease; }
+.day .t { font-family: var(--mono); font-size: 0.85rem; color: var(--clay); font-variant-numeric: tabular-nums; }
+.day .w { font-family: var(--display); font-size: 1.35rem; line-height: 1.2; }
+.day .w small { display: block; font-family: var(--body); font-size: 0.98rem; color: var(--ink-soft); margin-top: 2px; }
+.day li.is-now { background: var(--ink); color: var(--paper); padding-inline: 12px; margin-inline: -12px; }
+.day li.is-now .w small { color: var(--paper); opacity: 0.75; }
+.day li.is-now .t { color: var(--paper); }
+.day-note { margin-top: 18px; color: var(--ink-soft); font-style: italic; }
+
+/* ---------- QUICK FIRE ---------- */
+.qf-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.score { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.score b { color: var(--clay); font-weight: 500; }
+.btn-line { background: none; border: 1px solid var(--ink); padding: 10px 16px; cursor: pointer; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.qf { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 5vw, 64px); border-top: 2px solid var(--ink); }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; align-items: center; padding: 16px 0 12px; border-bottom: 1px solid var(--rule); }
+.pair .or { font-family: var(--display); font-style: italic; color: var(--ink-soft); }
+.opt {
+  background: none; border: 1px solid var(--rule); padding: 12px 10px; cursor: pointer;
+  font-family: var(--display); font-size: 1.3rem; line-height: 1.1; transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.opt:hover { border-color: var(--ink); }
+.opt.is-pick { background: var(--clay); color: var(--paper); border-color: var(--clay); }
+.opt.is-miss { text-decoration: line-through; color: var(--ink-soft); }
+.pair .verdict { grid-column: 1 / -1; min-height: 1.6em; font-family: var(--display); font-style: italic; font-size: 1.1rem; color: var(--ink-soft); }
+.pair .verdict b { font-family: var(--mono); font-style: normal; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay); margin-right: 8px; }
+
+/* ---------- SHELF & TRAVEL ---------- */
+.st-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+.shelf { display: flex; align-items: end; gap: 10px; height: 290px; border-bottom: 6px solid var(--ink); padding-inline: 8px; }
+.spine {
+  writing-mode: vertical-rl; transform: rotate(180deg); display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 12px; font-family: var(--display); font-size: 1.2rem; line-height: 1.1; transition: transform 300ms ease;
+  border: 1px solid var(--ink);
+}
+.spine small { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.spine:hover { transform: rotate(180deg) translateY(14px); }
+.spine.s1 { height: 92%; width: 64px; background: var(--ink); color: var(--paper); }
+.spine.s2 { height: 80%; width: 56px; background: var(--clay); color: var(--paper); border-color: var(--clay); }
+.spine.s3 { height: 86%; width: 72px; background: var(--paper-deep); font-style: italic; }
+.shelf-notes { display: grid; gap: 10px; margin-top: 18px; }
+.shelf-notes p { font-size: 1.02rem; }
+.shelf-notes b { font-family: var(--display); font-weight: 600; }
+
+.passes { display: grid; gap: 16px; }
+.pass { display: grid; grid-template-columns: minmax(0, 1fr) auto; border: 1px solid var(--ink); background: var(--paper); }
+.pass-main { padding: 16px 18px; display: grid; gap: 8px; min-width: 0; }
+.pass-route { display: flex; align-items: center; gap: 12px; }
+.pass-route .code { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1; }
+.pass-route .plane { flex: 1; min-width: 24px; border-top: 1px dashed var(--ink-soft); position: relative; }
+.pass-route .plane::after { content: "✈"; position: absolute; left: 50%; top: -0.75em; transform: translateX(-50%); background: var(--paper); padding: 0 6px; color: var(--clay); font-size: 1rem; }
+.pass-meta { display: flex; gap: 18px; flex-wrap: wrap; }
+.pass-meta div { display: grid; }
+.pass-meta span:last-child { font-family: var(--display); font-size: 1.1rem; }
+.pass-stub { border-left: 1px dashed var(--ink); padding: 16px; display: grid; place-content: center; text-align: center; gap: 4px; min-width: 96px; }
+.pass-stub strong { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.1; }
+.pass.next .pass-stub { background: var(--olive); color: var(--paper); border-left-color: var(--paper); }
+.pass.next .pass-stub .label { color: var(--paper); opacity: 0.8; }
+
+.learning { margin-top: clamp(40px, 6vw, 64px); border-top: 2px solid var(--ink); padding-top: 18px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 32px; align-items: baseline; }
+.learning ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px 28px; flex-wrap: wrap; }
+.learning li { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); }
+.learning li::after { content: "_"; color: var(--clay); animation: blink 1s steps(1) infinite; margin-left: 2px; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- OFF DUTY ---------- */
+.life { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
+.box { border-top: 2px solid var(--ink); padding-top: 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.box h3 { font-size: 1.8rem; }
+.box.food { grid-column: span 5; background: var(--paper-deep); border-top-color: var(--clay); padding: 22px; }
+.box.films { grid-column: span 7; }
+.box.talent { grid-column: 1 / -1; background: var(--ink); color: var(--paper); border-top-color: var(--ink); padding: clamp(22px, 3vw, 36px); grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px 40px; align-items: center; }
+.box.talent .label { color: var(--paper); opacity: 0.7; }
+.box.talent h3 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-style: italic; }
+.box.talent p { font-size: 1.1rem; opacity: 0.85; }
+.menu { display: grid; gap: 8px; margin-top: 4px; }
+.menu div { display: flex; align-items: baseline; gap: 10px; font-family: var(--display); font-size: 1.35rem; }
+.menu div::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted var(--ink-soft); transform: translateY(-4px); }
+.menu div span:last-child { order: 2; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay); }
+.ticket { display: grid; border: 1px solid var(--rule); }
+.ticket div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 14px; padding: 14px 16px; align-items: baseline; }
+.ticket div + div { border-top: 1px dashed var(--rule); }
+.ticket .label { color: var(--clay); }
+.ticket strong { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.4rem; line-height: 1.15; }
+.ticket small { display: block; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* ---------- BACK COVER ---------- */
+.back { text-align: center; }
+.back h2 { font-size: clamp(3rem, 10vw, 7.5rem); font-style: italic; }
+.back h2 span { color: var(--clay); font-style: normal; }
+.back p { max-width: 46ch; margin: 22px auto 0; color: var(--ink-soft); }
+.cta {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 16px 28px;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+  transition: background 200ms ease, transform 200ms ease;
+}
+.cta:hover { background: var(--clay); transform: translateY(-2px); }
+.contact-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.contact-row .cta { margin-top: 0; text-transform: none; letter-spacing: 0.04em; font-size: 0.95rem; max-width: 100%; overflow-wrap: anywhere; }
+.cta.ghost { background: none; color: var(--ink); border: 1px solid var(--ink); }
+.cta.ghost:hover { background: var(--ink); color: var(--paper); }
+.colophon { margin-top: clamp(56px, 8vw, 96px); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--ink); padding-top: 12px; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .cover-grid { grid-template-columns: 1fr 1fr; }
+  .cover-feature { grid-column: 1 / -1; order: -1; border: 0; border-bottom: 1px solid var(--rule); padding-bottom: 28px; }
+  .coverlines.right { text-align: left; }
+  .flips { grid-template-columns: 1fr; }
+  .flip { min-height: 280px; }
+  .contents, .st-grid { grid-template-columns: minmax(0, 1fr); }
+  .day, .qf { grid-template-columns: minmax(0, 1fr); }
+  .box.food, .box.films { grid-column: 1 / -1; }
+  .box.talent { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .cover-grid { grid-template-columns: 1fr; }
+  .win-grid { grid-template-columns: 1fr; }
+  .barcode { width: 100%; justify-content: space-between; flex-direction: row-reverse; }
+  .barcode .label { text-align: left; }
+  .learning { grid-template-columns: 1fr; }
+  .pass { grid-template-columns: minmax(0, 1fr); }
+  .pass-stub { border-left: 0; border-top: 1px dashed var(--ink); }
+  .pass.next .pass-stub { border-top-color: var(--paper); }
+}
+</style>
+
+<!-- ============ COVER ============ -->
+<header class="cover wrap" id="cover">
+  <div class="cover-top">
+    <span class="label">Volume 01</span>
+    <span class="label">Autumn 2026</span>
+  </div>
+  <h1 class="masthead">KRISHIKA</h1>
+  <p class="masthead-sub">Tech sales. Black coffee. Built on trust.</p>
+
+  <div class="cover-grid">
+    <div class="coverlines">
+      <a class="coverline" href="#about"><span class="kicker">Profile</span><strong>I don’t wait for deals. I build them.</strong><small>Tech sales, out of Rajkot</small></a>
+      <a class="coverline" href="#win"><span class="kicker">Recognition</span><strong>Second place. First year.</strong><small>The youngest in the competition</small></a>
+    </div>
+
+    <figure class="cover-feature">
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="seal-ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <circle cx="100" cy="100" r="96" class="seal-edge"/>
+          <circle cx="100" cy="100" r="60" class="seal-edge"/>
+          <text class="seal-text"><textPath href="#seal-ring" textLength="486">KRISHIKA PANDHI · TECH SALES · RAJKOT · VOL. 01 · </textPath></text>
+        </svg>
+        <span class="seal-mono">KP</span>
+      </div>
+      <blockquote class="cover-quote">
+        <span>“Trust first.</span><span>Everything else follows.”</span>
+      </blockquote>
+      <figcaption class="byline">In my words</figcaption>
+    </figure>
+
+    <div class="coverlines right">
+      <a class="coverline" href="#day"><span class="kicker">A day in my life</span><strong>Up at 9. Done at 3 a.m.</strong><small>See what I’m doing right now</small></a>
+      <a class="coverline" href="#quickfire"><span class="kicker">Quick fire</span><strong>BMW. Obviously.</strong><small>Can you guess the other seven?</small></a>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="traits" aria-label="In three words"><span>Outgoing</span><span>Lively</span><span>Focused</span></div>
+    <div class="barcode">
+      <span class="label">Vol. 01<br>2026</span>
+      <canvas id="barcode" width="264" height="88" aria-hidden="true"></canvas>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONTENTS ============ -->
+<section class="page" id="contents">
+  <div class="wrap">
+    <div class="folio"><span class="label">Contents</span><span class="label">02</span></div>
+    <div class="contents">
+      <h2>Contents</h2>
+      <ol class="toc">
+        <li><a href="#about"><span class="pg">04</span><span class="t">Profile<span class="d">Who I am and what I sell</span></span></a></li>
+        <li><a href="#skills"><span class="pg">08</span><span class="t">The craft<span class="d">Three cards. Flip them.</span></span></a></li>
+        <li><a href="#win"><span class="pg">12</span><span class="t">Recognition<span class="d">Year one</span></span></a></li>
+        <li><a href="#day"><span class="pg">16</span><span class="t">A day in my life<span class="d">Live, in Rajkot time</span></span></a></li>
+        <li><a href="#quickfire"><span class="pg">20</span><span class="t">Quick fire<span class="d">Eight questions. Guess my answers.</span></span></a></li>
+        <li><a href="#shelf"><span class="pg">24</span><span class="t">Shelf &amp; travels<span class="d">What I read, where I go</span></span></a></li>
+        <li><a href="#life"><span class="pg">28</span><span class="t">Off duty<span class="d">Food, films and the stage</span></span></a></li>
+        <li><a href="#contact"><span class="pg">32</span><span class="t">Contact<span class="d">Let’s talk</span></span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section class="page" id="about">
+  <div class="wrap">
+    <div class="folio"><span class="label">Profile</span><span class="label">04</span></div>
+    <div class="about-head">
+      <span class="label">Profile</span>
+      <h2>I don’t wait for deals. <em>I build them.</em></h2>
+      <p class="dek">Tech sales across web development, design and SEO. Raised in Kutch, based in Rajkot.</p>
+    </div>
+    <div class="columns">
+      <p class="dropcap">I’m Krishika Pandhi. I sell digital growth: websites that perform, brands that look the part, and SEO that brings in the right customers. I’m good at it because I care whether my clients win.</p>
+      <p>Sales isn’t my job title. It’s how I think. I read people fast, I say what I mean, and I don’t let a good opportunity go quiet.</p>
+      <p>I’m outgoing, lively and very focused. I’m also a night owl, which is why my best ideas usually show up after midnight.</p>
+    </div>
+    <div class="route" aria-label="Origin, base and usual destination">
+      <span>ORIGIN</span><b>MUNDRA, KUTCH</b><span class="line"></span><span>BASED</span><b>RAJKOT</b><span class="line"></span><span>USUALLY ON A CALL WITH</span><b>MUMBAI</b>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CRAFT ============ -->
+<section class="page" id="skills">
+  <div class="wrap">
+    <div class="folio"><span class="label">The craft</span><span class="label">08</span></div>
+    <div class="sec-head">
+      <h2>The craft</h2>
+      <p>I run the whole sale. These three are why clients stay. Tap a card to flip it.</p>
+    </div>
+    <div class="flips">
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-inner">
+          <span class="face side-a">
+            <span class="label">I</span>
+            <span><h3>Trust</h3><span class="hook">I don’t perform.</span></span>
+            <span class="flip-hint"><span class="turn">Flip</span><span aria-hidden="true">↻</span></span>
+          </span>
+          <span class="face side-b">
+            <span class="label">Trust</span>
+            <p>Clients can spot a script from a mile away. I don’t use one. I tell people what will work and what won’t, and that’s exactly why they say yes.</p>
+            <span class="pull">Credibility is built in small moments.</span>
+          </span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-inner">
+          <span class="face side-a">
+            <span class="label">II</span>
+            <span><h3>Rapport</h3><span class="hook">I listen first.</span></span>
+            <span class="flip-hint"><span class="turn">Flip</span><span aria-hidden="true">↻</span></span>
+          </span>
+          <span class="face side-b">
+            <span class="label">Rapport</span>
+            <p>On a first call I listen more than I talk. I find common ground fast and remember the details. By the second call, we’re partners.</p>
+            <span class="pull">Good conversations become good business.</span>
+          </span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-inner">
+          <span class="face side-a">
+            <span class="label">III</span>
+            <span><h3>Follow-through</h3><span class="hook">I don’t let go.</span></span>
+            <span class="flip-hint"><span class="turn">Flip</span><span aria-hidden="true">↻</span></span>
+          </span>
+          <span class="face side-b">
+            <span class="label">Follow-through</span>
+            <p>Most deals are won after the first “not now.” I follow up with purpose and something useful every time, so I’m the first call when they’re ready.</p>
+            <span class="pull">Consistency closes.</span>
+          </span>
+        </span>
+      </button>
+    </div>
+    <div class="services">
+      <span class="label">What I sell</span>
+      <span class="s">Web development</span><span class="s">Brand &amp; design</span><span class="s">SEO</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECOGNITION ============ -->
+<section class="page win" id="win">
+  <div class="wrap">
+    <div class="folio"><span class="label">Recognition</span><span class="label">12</span></div>
+    <div class="win-grid">
+      <div class="rank" aria-label="Second place">2<sup>nd</sup></div>
+      <div>
+        <span class="label">Company sales competition</span>
+        <h2>Youngest in the room. Second on the board.</h2>
+        <p class="body">In my first year, I entered my company’s sales competition as the youngest participant and finished second, ahead of people with years more experience. Preparation and real relationships beat seniority. I knew that going in.</p>
+        <div class="facts"><span>Year one</span><span>Youngest participant</span><span>Ranked second</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ A DAY IN MY LIFE ============ -->
+<section class="page" id="day">
+  <div class="wrap">
+    <div class="folio"><span class="label">A day in my life</span><span class="label">16</span></div>
+    <div class="sec-head">
+      <h2>A day in <em>my life</em></h2>
+      <p>Starts at 9. Ends around 3 a.m. That explains my social life.</p>
+    </div>
+    <div class="now" aria-live="polite">
+      <span class="clock" id="now-clock">Rajkot time</span>
+      <strong id="now-text">Right now, I’m probably on a call.</strong>
+    </div>
+    <ol class="day" id="day-list">
+      <li data-start="9"><span class="t">09:00</span><span class="w">Wake up, pray<small>The day starts quietly.</small></span></li>
+      <li data-start="9.75"><span class="t">09:45</span><span class="w">Coffee. Black.<small>Non-negotiable.</small></span></li>
+      <li data-start="10.5"><span class="t">10:30</span><span class="w">Office, client updates<small>Who needs what, today.</small></span></li>
+      <li data-start="11.5"><span class="t">11:30</span><span class="w">Internal meetings<small>Aligning the team.</small></span></li>
+      <li data-start="13.5"><span class="t">13:30</span><span class="w">Lunch<small>A short one.</small></span></li>
+      <li data-start="14.5"><span class="t">14:30</span><span class="w">Follow-ups &amp; outreach<small>Where deals are actually won.</small></span></li>
+      <li data-start="16"><span class="t">16:00</span><span class="w">Client meetings<small>Listening, pitching, closing.</small></span></li>
+      <li data-start="18"><span class="t">18:00</span><span class="w">Reset<small>Five minutes. Then back in.</small></span></li>
+      <li data-start="18.5"><span class="t">18:30</span><span class="w">More meetings<small>Mumbai doesn’t sleep either.</small></span></li>
+      <li data-start="21"><span class="t">21:00</span><span class="w">Pending tasks<small>Clearing the deck.</small></span></li>
+      <li data-start="23"><span class="t">23:00</span><span class="w">Building new things<small>AI automations, new ideas.</small></span></li>
+      <li data-start="27"><span class="t">03:00</span><span class="w">Finally, bed<small>See you at 9.</small></span></li>
+    </ol>
+    <p class="day-note">Times are approximate. The coffee is not.</p>
+  </div>
+</section>
+
+<!-- ============ QUICK FIRE ============ -->
+<section class="page" id="quickfire">
+  <div class="wrap">
+    <div class="folio"><span class="label">Quick fire</span><span class="label">20</span></div>
+    <div class="sec-head">
+      <h2>Quick <em>fire.</em></h2>
+      <p>How well do you know me? Pick a side and see if you’re right.</p>
+    </div>
+    <div class="qf-bar">
+      <span class="score" id="score">You know me <b>0</b> / 8</span>
+      <button class="btn-line" type="button" id="reveal-all">Show all my answers</button>
+    </div>
+    <div class="qf" id="qf"></div>
+  </div>
+</section>
+
+<!-- ============ SHELF & TRAVELS ============ -->
+<section class="page" id="shelf">
+  <div class="wrap">
+    <div class="folio"><span class="label">Shelf &amp; travels</span><span class="label">24</span></div>
+    <div class="sec-head">
+      <h2>What I read. <em>Where I go.</em></h2>
+      <p>Strategy on the shelf, the sea on the wishlist.</p>
+    </div>
+    <div class="st-grid">
+      <div>
+        <span class="label">On my shelf</span>
+        <div class="shelf" aria-label="Bookshelf">
+          <span class="spine s1">The 48 Laws of Power <small>Greene</small></span>
+          <span class="spine s2">The Art of War <small>Sun Tzu</small></span>
+          <span class="spine s3">Now reading <small>From Belgium</small></span>
+        </div>
+        <div class="shelf-notes">
+          <p><b>Power</b> and <b>The Art of War</b>: everything is strategy, including sales.</p>
+          <p><b>Now reading:</b> a book written by one of my clients, who sent it to me from Belgium. That’s what happens when you build real relationships.</p>
+        </div>
+      </div>
+      <div>
+        <span class="label">Boarding passes</span>
+        <div class="passes" style="margin-top:12px">
+          <div class="pass">
+            <div class="pass-main">
+              <div class="pass-route"><span class="code">HSR</span><span class="plane"></span><span class="code">BOM</span></div>
+              <div class="pass-meta">
+                <div><span class="label">From</span><span>Rajkot</span></div>
+                <div><span class="label">To</span><span>Mumbai</span></div>
+                <div><span class="label">Class</span><span>Business</span></div>
+              </div>
+            </div>
+            <div class="pass-stub"><span class="label">Status</span><strong>My calling place</strong></div>
+          </div>
+          <div class="pass next">
+            <div class="pass-main">
+              <div class="pass-route"><span class="code">HSR</span><span class="plane"></span><span class="code">GOI</span></div>
+              <div class="pass-meta">
+                <div><span class="label">From</span><span>Rajkot</span></div>
+                <div><span class="label">To</span><span>Goa</span></div>
+                <div><span class="label">Seat</span><span>Beachside</span></div>
+              </div>
+            </div>
+            <div class="pass-stub"><span class="label">Departing</span><strong>This year</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="learning">
+      <span class="label">Currently learning</span>
+      <ul><li>AI automations</li><li>Sharper sales</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFF DUTY ============ -->
+<section class="page" id="life">
+  <div class="wrap">
+    <div class="folio"><span class="label">Off duty</span><span class="label">28</span></div>
+    <div class="sec-head">
+      <h2>Off <em>duty.</em></h2>
+      <p>It’s rare. Here’s how I spend it.</p>
+    </div>
+    <div class="life">
+      <div class="box food">
+        <span class="label">At the table</span>
+        <h3>The order</h3>
+        <div class="menu">
+          <div><span>Garlic bread</span><span>Always</span></div>
+          <div><span>Alfredo pasta</span><span>Always</span></div>
+          <div><span>Black coffee</span><span>Twice</span></div>
+        </div>
+      </div>
+      <div class="box films">
+        <span class="label">On rewatch</span>
+        <h3>Two films I keep coming back to</h3>
+        <div class="ticket">
+          <div><span class="label">No. 1</span><span><strong>Zindagi Na Milegi Dobara</strong><small>On living fully</small></span></div>
+          <div><span class="label">No. 2</span><span><strong>Dil Dhadakne Do</strong><small>On family, and finding your own voice</small></span></div>
+        </div>
+      </div>
+      <div class="box talent">
+        <div>
+          <span class="label">Hidden talent</span>
+          <h3>I act.</h3>
+        </div>
+        <p>Acting taught me to read a room, hold attention and adapt mid-scene. Turns out that’s also a pretty good description of a sales meeting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BACK COVER ============ -->
+<footer class="page back" id="contact">
+  <div class="wrap">
+    <div class="folio"><span class="label">Contact</span><span class="label">32</span></div>
+    <h2>Let’s <span>talk.</span></h2>
+    <p>If your business deserves a better online presence, write to me. Email is my favourite, and I’m probably awake.</p>
+    <div class="contact-row">
+      <a class="cta" href="mailto:hi@krishikapandhi.com">hi@krishikapandhi.com <span aria-hidden="true">→</span></a>
+      <a class="cta ghost" href="https://www.linkedin.com/in/krishikapandhi/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="colophon">
+      <span class="label">© 2026 Krishika Pandhi</span>
+      <span class="label">Rajkot, Gujarat</span>
+      <a class="label" href="#cover">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Barcode drawn from the letters of the name */
+(function () {
+  var c = document.getElementById('barcode');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var ink = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#2B211A';
+  var seed = 'KRISHIKAPANDHI', x = 0, i = 0;
+  ctx.fillStyle = ink;
+  while (x < c.width) {
+    var code = seed.charCodeAt(i % seed.length) + i;
+    var w = 2 + (code % 4) * 2;
+    if (i % 2 === 0) ctx.fillRect(x, 0, w, c.height);
+    x += w; i++;
+  }
+})();
+
+/* Flip cards */
+document.querySelectorAll('.flip').forEach(function (card) {
+  card.addEventListener('click', function () {
+    var on = card.classList.toggle('is-flipped');
+    card.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+});
+
+/* Day in my life: highlight what I'm probably doing in Rajkot (IST) right now */
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('#day-list li'));
+  var clock = document.getElementById('now-clock');
+  var text = document.getElementById('now-text');
+  function tick() {
+    var d = new Date();
+    var ist = new Date(d.getTime() + (d.getTimezoneOffset() + 330) * 60000);
+    var h = ist.getHours() + ist.getMinutes() / 60;
+    var hh = String(ist.getHours()).padStart(2, '0'), mm = String(ist.getMinutes()).padStart(2, '0');
+    clock.textContent = 'Rajkot · ' + hh + ':' + mm;
+    var t = h < 9 ? h + 24 : h; // after midnight counts as the same working day
+    var current = null;
+    items.forEach(function (li) { li.classList.remove('is-now'); if (t >= parseFloat(li.dataset.start)) current = li; });
+    if (current && current.dataset.start === '27') current = null;
+    if (current) {
+      current.classList.add('is-now');
+      text.textContent = 'Right now, I’m probably: ' + current.querySelector('.w').firstChild.textContent.trim() + '.';
+    } else {
+      text.textContent = 'Right now, I’m asleep. Finally.';
+    }
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
+
+/* Quick fire */
+(function () {
+  var pairs = [
+    { a: 'Call', b: 'Email', pick: 'b', say: 'Email. Everything in writing.' },
+    { a: 'Mountains', b: 'Beaches', pick: 'b', say: 'Beaches, any day.' },
+    { a: 'Chai', b: 'Coffee', pick: 'b', say: 'Coffee. Black. Always.' },
+    { a: 'Book', b: 'Film', pick: 'b', say: 'Film. Ask me about ZNMD.' },
+    { a: 'Planned', b: 'Spontaneous', pick: 'b', say: 'Spontaneous. Plans are suggestions.' },
+    { a: 'Morning person', b: 'Night owl', pick: 'b', say: 'Night owl. See: 3 a.m.' },
+    { a: 'Cat', b: 'Dog', pick: 'both', say: 'Trick question. Both.' },
+    { a: 'BMW', b: 'Mercedes', pick: 'a', say: 'BMW. Obviously. Any day.' }
+  ];
+  var wrap = document.getElementById('qf');
+  var scoreEl = document.querySelector('#score b');
+  var score = 0;
+  pairs.forEach(function (p, i) {
+    var row = document.createElement('div');
+    row.className = 'pair';
+    row.innerHTML =
+      '<button type="button" class="opt" data-side="a">' + p.a + '</button>' +
+      '<span class="or">or</span>' +
+      '<button type="button" class="opt" data-side="b">' + p.b + '</button>' +
+      '<p class="verdict" aria-live="polite"></p>';
+    var verdict = row.querySelector('.verdict');
+    function reveal(guess) {
+      if (row.dataset.done) return;
+      row.dataset.done = '1';
+      row.querySelectorAll('.opt').forEach(function (o) {
+        var mine = p.pick === 'both' || o.dataset.side === p.pick;
+        o.classList.add(mine ? 'is-pick' : 'is-miss');
+        o.setAttribute('aria-disabled', 'true');
+      });
+      if (guess) {
+        var right = p.pick === 'both' || guess === p.pick;
+        if (right) { score++; scoreEl.textContent = score; }
+        verdict.innerHTML = '<b>' + (right ? 'You got it' : 'Nope') + '</b>' + p.say;
+      } else {
+        verdict.textContent = p.say;
+      }
+    }
+    row.querySelectorAll('.opt').forEach(function (o) {
+      o.addEventListener('click', function () { reveal(o.dataset.side); });
+    });
+    row._reveal = reveal;
+    wrap.appendChild(row);
+  });
+  document.getElementById('reveal-all').addEventListener('click', function () {
+    Array.prototype.forEach.call(wrap.children, function (row) { row._reveal(null); });
+  });
+})();
+</script>
+
+</body>
+</html>
